@@ -7,8 +7,10 @@ import 'package:audaney/commons/utils/misc.dart';
 
 abstract class ThemeColor{
 
-  static const kPrimaryColor = Color(0xff251356);
-  static const kPrimaryColorAlt = Color(0xff272A56);
+  // static const kPrimaryColor = Color(0xff251356);
+  static const kPrimaryColor =  Color(0xff060405);
+  static const kPrimaryColorAlt =  Color(0xff060405);
+  // static const kPrimaryColorAlt = Color(0xff272A56);
   static const kSecondaryColor = Color(0xff540FA0);
   static const kSecondaryColorAlt = Color(0xffA47BDD);
   static const kTertiaryColor = Color(0xff4D1ABC);

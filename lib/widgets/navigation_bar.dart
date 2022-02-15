@@ -1,5 +1,6 @@
 import 'dart:io' show Platform;
 import 'package:audaney/commons/constants/theme_colors.dart';
+import 'package:audaney/dashboard/explore/explore_shazam.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -64,7 +65,16 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   buildBottomBarItem(IconData icon, String title, int index) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if(index == 1){
+          Navigator.push(context, MaterialPageRoute(builder: (_)=> const ShazamScreen()));
+          return;
+        }
+
+        setState(() {
+          widget.onTap!(index);
+        });
+      },
       child: Container(
         color: Colors.transparent,
         height: 48,
