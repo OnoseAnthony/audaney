@@ -1,6 +1,7 @@
 import 'dart:io' show Platform;
 import 'package:audaney/commons/constants/theme_colors.dart';
 import 'package:audaney/dashboard/explore/explore_shazam.dart';
+import 'package:audaney/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -65,9 +66,28 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   buildBottomBarItem(IconData icon, String title, int index) {
     return GestureDetector(
-      onTap: () {
+      onTap: () async{
         if(index == 1){
           Navigator.push(context, MaterialPageRoute(builder: (_)=> const ShazamScreen()));
+          return;
+        }
+
+        if(index == 2){
+          await showDialog(
+            useSafeArea: false,
+              context: context,
+              builder: (context) => SwipeToDismiss(
+                child: Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  color: Colors.red,
+                  child: const Text(
+                    "Red",
+                    style: TextStyle(fontSize: 100),
+                  ),
+                ),
+              )
+        );
           return;
         }
 

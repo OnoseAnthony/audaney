@@ -1,10 +1,8 @@
 import 'package:audaney/commons/constants/theme_colors.dart';
 import 'package:audaney/dashboard/explore/home_screen.dart';
+import 'package:audaney/widgets/card.dart';
 import 'package:audaney/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'explore/player_screen.dart';
-import 'explore/explore_shazam.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
@@ -18,9 +16,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _currentIndex = 0;
   final List<Widget> _childrenUser = [
     const HomeScreen(),
-    const ShazamScreen(),
     const SizedBox(),
-    const SizedBox()
+    const SizedBox(),
+    SwipeToDismiss(child: Container(height: 500, width: 500, color: Colors.blue), canDismissHorizontally: false, canDismissVertically: false,),
   ];
 
   @override

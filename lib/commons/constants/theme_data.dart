@@ -20,10 +20,17 @@ abstract class ThemeStyle {
           errorColor: ThemeColor.kErrorColor(themeMode),
           brightness: ThemeColor.kBrightness(themeMode)
       ).copyWith(secondary: ThemeColor.kPrimaryColor.withOpacity(0.1)),
-      pageTransitionsTheme: const PageTransitionsTheme(builders: {
-        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      }),
+      // pageTransitionsTheme: const PageTransitionsTheme(builders: {
+      //   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+      //   TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      // }),
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: <TargetPlatform, PageTransitionsBuilder>{
+          TargetPlatform.android: ZoomPageTransitionsBuilder(),
+          TargetPlatform.iOS: ZoomPageTransitionsBuilder()
+        },
+      ),
+
     );
   }
 }
